@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#root > iframe:nth-child(1) {
+  min-height: 1320px;
+  width: 100%;
+ }
+
+ 
