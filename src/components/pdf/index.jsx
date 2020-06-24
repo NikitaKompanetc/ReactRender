@@ -4,7 +4,7 @@ import logo from './logo.png';
 import Kaushan from '../../fonts/kaushan-script/KaushanScript-Regular.otf';
 import Spectral from '../../fonts/Spectral/Spectral-Regular.ttf';
 import SpectralBold from '../../fonts/Spectral/Spectral-Bold.ttf';
-import ReactPDF from '@react-pdf/renderer';
+// import ReactPDF from '@react-pdf/renderer';
 
 
 // Register font
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
   TitleHr: { 
     color:'#152B80', 
     fontSize: 20, 
-    fontWeight: '600', 
     textAlign: 'center',
     fontFamily: 'Spectral',
     fontWeight: 600, 
