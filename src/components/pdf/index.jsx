@@ -1,17 +1,14 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import logo from './logo.png';
-import Kaushan from '../../fonts/kaushan-script/KaushanScript-Regular.otf';
+import Kaushan from '../../fonts/kaushan-script/KaushanScript-Regular.ttf';
 import Spectral from '../../fonts/Spectral/Spectral-Regular.ttf';
 import SpectralBold from '../../fonts/Spectral/Spectral-Bold.ttf';
 // import ReactPDF from '@react-pdf/renderer';
 
 
 // Register font
-Font.register({ family: 'Kaushan Script' , src: Kaushan,  
-
-   }); 
-  //  Font.register({ family: 'Spectral' , src: Spectral,  }); 
+Font.register({ family: 'Kaushan Script' , src: Kaushan  }); 
    Font.register({ family: 'Spectral', fonts: [
     { src: Spectral }, 
     { src:  SpectralBold, fontWeight: 600 },
