@@ -19,9 +19,7 @@ const styles = StyleSheet.create({
   header: { flexGrow: 3 },
   bold: { fontFamily: 'Spectral', fontWeight: 600,  },
   table: {
-    fontSize: 10,
-    width: 550,
-    height: 180,
+    width: '100%',
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
@@ -38,10 +36,9 @@ const styles = StyleSheet.create({
     alignItems: "stretch",
     flexGrow: 0,
     flexShrink: 0,
-    flexBasis: 35
+    flexBasis: 35,
   },
   bottomTable: {
-    fontSize: 10,
     width: 'auto',
     display: "flex",
     flexDirection: "column",
@@ -55,7 +52,8 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     flexShrink: 1,
     flexBasis: "auto",
-    alignSelf: "stretch"
+    alignSelf: "stretch",
+    height: '135px',
   },
   bottomTitle: {
     backgroundColor: "#eee"
@@ -63,6 +61,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 11,
     fontWeight: 1200,
+    width:'80%',
     color: "#1a245c",
     margin: 8,
     textAlign: 'left',
@@ -75,38 +74,64 @@ const styles = StyleSheet.create({
   headerGrow: {
       flexGrow: 1,
   },
-  title: { fontSize: 36, color:'#152B80', fontFamily:'Kaushan Script', paddingBottom:'20px' },
-  titleDescr: { color:'#152B80', fontSize: 12 , textAlign:'center', width: 255, fontFamily:'Spectral' },
+  title: {  
+    color: '#05308C', 
+    textAlign: 'left',
+    fontFamily: 'Kaushan Script', 
+    fontSize: '50px',
+    paddingLeft: '2%',
+    position: 'relative',
+    top: '-20px'
+  },
+  titleDescr: { 
+    color:'#05308C', 
+    fontSize: '15px', 
+    textAlign: 'center', 
+    width: '100%', 
+    fontFamily: 'Spectral',
+    position: 'relative',
+    top: '-25px',
+    left: '-30px' 
+
+  },
+  boldDescr: {
+    fontSize: '15px'
+  },
   titleBold: {},
-  image: { width: '10%' },
-  img: { width: '70px' },
+  image: { width: '20%' },
+  img: { 
+    width: '98px',
+    height: '118px'
+  
+  },
   hr: { 
-    borderColor: "#cc0000",
+    borderColor: "##05308C",
     borderStyle: "solid",
-    borderWidth: 2,
+    borderWidth: 1,
     border: '0',
     borderTop: 2,
-    paddingTop: 5,
-    paddingBottom: '10px' 
+
   },
   TitleHr: { 
-    color:'#152B80', 
-    fontSize: 20, 
+    color:'#05308C', 
+    fontSize: '20px', 
     textAlign: 'center',
     fontFamily: 'Spectral',
     fontWeight: 600, 
+    marginTop: '10px',
+    marginBottom: '10px'
   },
   DataAttr: { 
-    color:'#152B80', 
+    color:'#05308C', 
    },
   DataSet: {
     backgroundColor: "#eee", 
-    padding: 10,
+    padding: 5,
     borderRadius: '50%',
     fontFamily: 'Spectral'
   },
-  DataName: { width:'55%' },
-  DataDate: { width:'30%' },
+  DataName: { width:'55%', fontFamily:'Spectral', fontSize:'15px' },
+  DataDate: { width:'30%', fontFamily:'Spectral', fontSize:'15px' },
   bottomContainer: {
     backgroundColor: "#eee", 
     padding: 3,
@@ -116,8 +141,8 @@ const styles = StyleSheet.create({
     bottom: '20px',
     left: '25'
   }, 
-  bttmPadding: { padding: '3px 0', fontFamily: 'Spectral', },
-  bttmTitle: { fontSize: 22, fontFamily:'Kaushan Script' }
+  bttmPadding: { padding: '1px 0', fontFamily: 'Spectral', fontSize: 14, },
+  bttmTitle: { fontSize: 30, fontFamily:'Kaushan Script' },
   });
  
 // Create Document Component
@@ -125,7 +150,7 @@ const PdfDocument = () => (
     <Document>
     <Page style={styles.page} size="A4">
     <View style={styles.table}>
-          <View style={[styles.row, styles.header]}>
+          <View style={[styles.row, styles.header, styles.cell]}>
               <View object-fit="fill"  style={[styles.headerText, styles.cell, styles.image]}>
                 <Image style={styles.img} src={logo} />
               </View>
@@ -133,15 +158,15 @@ const PdfDocument = () => (
                 <Text style={[styles.title]}> DR. Lois Rene</Text>
                 <Text style={styles.titleDescr} >Gynecologie - Grossesse a Risque - Infertilite -</Text>
                 <Text style={styles.titleDescr} >Chirurgie Pelvienne - Sonographie</Text>
-                <Text style={[styles.bold, styles.titleDescr]} >Fecondation in vitro</Text>
+                <Text style={[styles.bold, styles.titleDescr, styles.boldDescr]} >Fecondation in vitro</Text>
               </View>
           </View>
           <View style={styles.hr}>
             <Text style={[styles.TitleHr, styles.bold]}>Examen de Laboratoire</Text>
           </View>
           <View style={[styles.DataAttr, styles.row]}>
-            <Text style={[styles.DataName, styles.DataSet]}>Nom: <Text style={styles.bold}>Louis Roselande</Text></Text>
-            <Text style={[styles.DataDate, styles.DataSet]}>Date: <Text style={styles.bold}>22-06-2020</Text></Text>
+            <Text style={[styles.DataName, styles.DataSet]}>Nom: <Text style={[styles.bold, styles.boldData]}>Louis Roselande</Text></Text>
+            <Text style={[styles.DataDate, styles.DataSet]}>Date: <Text style={[styles.bold, styles.boldData]}>22-06-2020</Text></Text>
           </View>
     </View>
     <View style={[styles.bottomTable, styles.DataAttr, styles.bottomContainer]}>
