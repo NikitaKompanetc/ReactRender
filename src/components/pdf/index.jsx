@@ -135,6 +135,14 @@ const styles = StyleSheet.create({
   },
   DataName: { width:'55%', fontFamily:'Spectral light', fontSize:'15px' },
   DataDate: { width:'30%', fontFamily:'Spectral light', fontSize:'15px' },
+  bodyText: {
+    color:'#05308C', 
+    fontSize: '15px', 
+    textAlign: 'center', 
+    width: '100%', 
+    fontFamily: 'Spectral light',
+    marginTop: '100px'
+  },
   bottomContainer: {
     backgroundColor: "#eee", 
     padding: 3,
@@ -170,6 +178,9 @@ const PdfDocument = () => (
           <View style={[styles.DataAttr, styles.row]}>
             <Text style={[styles.DataName, styles.DataSet]}>Nom: <Text style={[styles.bold, styles.boldData]}>Louis Roselande</Text></Text>
             <Text style={[styles.DataDate, styles.DataSet]}>Date: <Text style={[styles.bold, styles.boldData]}>22-06-2020</Text></Text>
+          </View>
+          <View>
+            <Text style={styles.bodyText} > hemogrammechimie sanguineurines culture des secretions vaginalesprofile lipidique </Text>
           </View>
     </View>
     <View style={[styles.bottomTable, styles.DataAttr, styles.bottomContainer]}>
