@@ -2,22 +2,24 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import logo from './logo.png';
 import Kaushan from '../../fonts/kaushan-script/KaushanScript-Regular.ttf';
-import Spectral from '../../fonts/Spectral/Spectral-Regular.ttf';
-import SpectralBold from '../../fonts/Spectral/Spectral-Bold.ttf';
+import Spectral from '../../fonts/Spectral/Spectral-Light.ttf';
+import SpectralBold from '../../fonts/Spectral/Spectral-ExtraBold.ttf';
 // import ReactPDF from '@react-pdf/renderer';
 
 
 // Register font
 Font.register({ family: 'Kaushan Script' , src: Kaushan  }); 
-   Font.register({ family: 'Spectral', fonts: [
-    { src: Spectral }, 
-    { src:  SpectralBold, fontWeight: 600 },
-   ]});
+Font.register({ family: 'Spectral light' , src: Spectral  });
+Font.register({ family: 'Spectral bold' , src: SpectralBold  });
+  //  Font.register({ family: 'Spectral', fonts: [
+  //   { src: Spectral }, 
+  //   { src:  SpectralBold, fontWeight: 600 },
+  //  ]});
 // Create styles
 const styles = StyleSheet.create({
   page: { flexDirection: "column", padding: 25 },
   header: { flexGrow: 3 },
-  bold: { fontFamily: 'Spectral', fontWeight: 600,  },
+  bold: { fontFamily: 'Spectral bold', fontWeight: 600,  },
   table: {
     width: '100%',
     display: "flex",
@@ -88,14 +90,15 @@ const styles = StyleSheet.create({
     fontSize: '15px', 
     textAlign: 'center', 
     width: '100%', 
-    fontFamily: 'Spectral',
+    fontFamily: 'Spectral light',
     position: 'relative',
     top: '-25px',
     left: '-30px' 
 
   },
   boldDescr: {
-    fontSize: '15px'
+    fontSize: '15px',
+    fontFamily: 'Spectral bold',
   },
   titleBold: {},
   image: { width: '20%' },
@@ -116,7 +119,7 @@ const styles = StyleSheet.create({
     color:'#05308C', 
     fontSize: '20px', 
     textAlign: 'center',
-    fontFamily: 'Spectral',
+    fontFamily: 'Spectral bold',
     fontWeight: 600, 
     marginTop: '10px',
     marginBottom: '10px'
@@ -128,10 +131,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#eee", 
     padding: 5,
     borderRadius: '50%',
-    fontFamily: 'Spectral'
+    fontFamily: 'Spectral light'
   },
-  DataName: { width:'55%', fontFamily:'Spectral', fontSize:'15px' },
-  DataDate: { width:'30%', fontFamily:'Spectral', fontSize:'15px' },
+  DataName: { width:'55%', fontFamily:'Spectral light', fontSize:'15px' },
+  DataDate: { width:'30%', fontFamily:'Spectral light', fontSize:'15px' },
   bottomContainer: {
     backgroundColor: "#eee", 
     padding: 3,
@@ -141,7 +144,7 @@ const styles = StyleSheet.create({
     bottom: '20px',
     left: '25'
   }, 
-  bttmPadding: { padding: '1px 0', fontFamily: 'Spectral', fontSize: 14, },
+  bttmPadding: { padding: '1px 0', fontFamily: 'Spectral light', fontSize: 14, },
   bttmTitle: { fontSize: 30, fontFamily:'Kaushan Script' },
   });
  
